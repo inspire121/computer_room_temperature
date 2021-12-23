@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     # 数据读取
     data_path = 'dataset.csv'
-    n_in, n_out, validation_split = 120, 60, 0.2
+    n_in, n_out, validation_split = 60, 60, 0.2
     train_X, train_y, test_X, test_y, scaler, pca = \
         process_data(data_path, n_in, n_out, validation_split, 
                      dropnan = True, use_rnn = False)

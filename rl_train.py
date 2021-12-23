@@ -100,7 +100,7 @@ def train(train_X, train_y, minibatch_size, start_timesteps, eval_freq, max_time
 if __name__ == '__main__':
     # 数据读取与存储
     data_path = 'dataset.csv'
-    n_in, n_out, validation_split = 120, 60, 0.2
+    n_in, n_out, validation_split = 60, 60, 0.2
     train_X, train_y, test_X, test_y, scaler, pca = \
         process_data(data_path, n_in, n_out, validation_split, 
                     dropnan = True, use_rnn = False)
@@ -111,7 +111,7 @@ if __name__ == '__main__':
         'start_timesteps': 500,  
         'eval_freq': 500,
         'minibatch_size': 10,       
-        'max_timesteps': 40000
+        'max_timesteps': 15000
     }
 
     # 训练

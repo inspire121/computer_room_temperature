@@ -87,6 +87,7 @@ def process_data(data_path, n_in=1, n_out=1, validation_split = 0.2, mode = 'min
         scaler = preprocessing.MinMaxScaler(feature_range=(0, 1))
     else:
         scaler = preprocessing.StandardScaler()
+        
     scaled_data = scaler.fit_transform(data)
 
     # 构建成监督学习数据集
@@ -202,7 +203,7 @@ class Accumulator:
 if __name__ == '__main__':
     data_path = 'dataset.csv'
     n_in, n_out, validation_split = 120, 6, 0.2
-    use_rnn = True
+    use_rnn = False
     train_X, train_y, test_X, test_y, scaler, pca = process_data(data_path, n_in, n_out, 
                                                         validation_split, use_rnn)
     print(f'train_X.shape: {train_X.shape}')

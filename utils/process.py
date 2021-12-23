@@ -1,12 +1,16 @@
 # 导入相关包
 import copy
-from matplotlib.pyplot import sca
-from numpy.core.fromnumeric import size
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+
+import torch
+from torch import nn
+from torch.utils import data
 
 from sklearn import preprocessing
 from sklearn.decomposition import PCA
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
     """
@@ -53,7 +57,7 @@ def process_pca(features):
             break
         i += 1
     
-    print(f'保留主元数目：{i + 1}')
+    print(f'保留主元数目: {i + 1}')
     pca = PCA(i + 1)
     pca.fit(features)
     low_d = pca.transform(features) #降维
@@ -64,7 +68,7 @@ def process_pca(features):
 
     return low_d, pca
 
-def process_data(data_path, n_in=1, n_out=1, validation_split = 0.2, dropnan=True, use_rnn = False):
+def process_data(data_path, n_in=1, n_out=1, validation_split = 0.2, mode = 'minmax', dropnan=True, use_rnn = False):
     # 读取数据
     sensor_data = pd.read_csv(data_path, index_col=0)
     
@@ -79,7 +83,10 @@ def process_data(data_path, n_in=1, n_out=1, validation_split = 0.2, dropnan=Tru
     # print(data.shape)
 
     # 归一化特征
-    scaler = preprocessing.MinMaxScaler(feature_range=(0, 1))
+    if mode == 'minmax':
+        scaler = preprocessing.MinMaxScaler(feature_range=(0, 1))
+    else:
+        scaler = preprocessing.StandardScaler()
     scaled_data = scaler.fit_transform(data)
 
     # 构建成监督学习数据集
@@ -129,10 +136,73 @@ def process_predict_data(data, n_in, n_out, scaler, pca, use_rnn = False):
 
     return features
 
+def load_iter(X, y, batch_size = 32):
+    X = torch.FloatTensor(X)
+    y = torch.FloatTensor(y)
+
+    dataset = data.TensorDataset(X, y)
+    return data.DataLoader(dataset, batch_size, shuffle = False)
+
+def calc_metrics(predicted_data, true_data, scaler):
+    predicted_data = np.array(predicted_data, dtype=float).reshape(-1)
+    true_data = np.array(true_data, dtype=float).reshape(-1)
+
+    assert predicted_data.shape == true_data.shape
+    predicted_data = predicted_data.reshape(predicted_data.shape[0],1)
+    true_data = true_data.reshape(true_data.shape[0],1)
+
+    # scaler只能对整体反归一化，构造两个空矩阵
+    temp_array_1 = np.ones((len(predicted_data),2))
+    temp_array_2 = np.ones((len(predicted_data),3))
+
+    # 反归一化
+    predicted_seq = np.concatenate((temp_array_1, predicted_data,temp_array_2), axis=1)
+    predicted_seq = scaler.inverse_transform(predicted_seq)
+    predicted_data = predicted_seq[:,2]
+
+    true_seq = np.concatenate((temp_array_1, true_data,temp_array_2), axis=1)
+    true_seq = scaler.inverse_transform(true_seq)
+    true_data = true_seq[:,2]
+
+    # 计算RMSE,MAE
+    rmse = np.sqrt(mean_squared_error(true_data,predicted_data))
+    mae = mean_absolute_error(true_data,predicted_data)
+    return rmse, mae
+
+def plot_metrics(train, test, mode):
+    plt.cla()
+    plt.plot(train, label = 'train ' + mode)
+    plt.plot(test, label = 'test ' + mode)
+    plt.legend()
+    plt.title(mode)
+    plt.xlabel('epoch')
+    plt.savefig('./results/rnn/pics/' + mode + '.png')
+
+def write_log(lines, path):
+    lines.append('-------------------------------')
+    lines = [line + '\n' for line in lines]
+    
+    with open(path + '/log.txt', 'a+') as f:
+        f.writelines(lines)
+
+class Accumulator:
+    """在n个变量上累加"""
+    def __init__(self, n):
+        self.data = [0.0] * n
+
+    def add(self, *args):
+        self.data = [a + float(b) for a, b in zip(self.data, args)]
+
+    def reset(self):
+        self.data = [0.0] * len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx]
+
 if __name__ == '__main__':
     data_path = 'dataset.csv'
     n_in, n_out, validation_split = 120, 6, 0.2
-    use_rnn = False
+    use_rnn = True
     train_X, train_y, test_X, test_y, scaler, pca = process_data(data_path, n_in, n_out, 
                                                         validation_split, use_rnn)
     print(f'train_X.shape: {train_X.shape}')
@@ -140,6 +210,21 @@ if __name__ == '__main__':
     print(f'test_X.shape: {test_X.shape}')
     print(f'test_y.shape: {test_y.shape}')
 
-    test = np.random.uniform(0, 1, size = (360, 6))
-    features = process_predict_data(test, n_in, n_out, scaler, pca, use_rnn)
-    print(f'features.shape: {features.shape}')
+    # print('----------------------------------')
+
+    # idx = np.arange(train_X.shape[0]).reshape(-1, 1)
+    # train_X = np.concatenate((idx, train_X), axis = 1)
+    # print(f'train_X.shape: {train_X.shape}')
+
+    # train_iter = load_iter(train_X, train_y)
+
+    # i = 0
+    # for X, y in train_iter:
+    #     print(X[:, 0])
+    #     i += 1
+    #     if i >= 3:
+    #         break
+
+    # test = np.random.uniform(0, 1, size = (360, 6))
+    # features = process_predict_data(test, n_in, n_out, scaler, pca, use_rnn)
+    # print(f'features.shape: {features.shape}')

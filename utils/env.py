@@ -42,8 +42,7 @@ class Env:
         reward = 0
         MSE = (action_num - self.check[self.i])**2
         MAE = abs(action_num - self.check[self.i])
-        reward = -2 * (MAE + MSE)
-        
+        reward = -MAE - MSE
         
         self.i += 1
         if self.i == self.observation_space.shape[0]:

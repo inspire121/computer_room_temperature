@@ -8,7 +8,7 @@ from utils.process import process_predict_data
 from utils.env import Env
 from rl_test import *
 
-n_in, n_out = 120, 6
+n_in, n_out = 120, 60
 data_path = 'dataset.csv'
 train_X, train_y, test_X, test_y, scaler, pca = \
         process_data(data_path, n_in, n_out, 
@@ -18,10 +18,6 @@ def predict(sequence):
     n_in, n_out = 120, 6
     
     features = process_predict_data(sequence, n_in, n_out, scaler, pca)
-    # print(features.shape)
-    # env = Env(train_X, train_y)
-    # state = env.reset()
-    # print(len(state))
     policy_path = './results/rl/models/TD3'
     policy = load_policy(23, 1, policy_path)
 

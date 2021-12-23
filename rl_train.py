@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from torch import optim
 
 from utils.process import process_data
 from utils.env import Env
@@ -7,6 +8,9 @@ from utils.TD3 import TD3
 from utils.replayer import ReplayBuffer
 
 from rl_test import *
+
+import time
+from datetime import datetime
 
 def eval_policy(policy, env, eval_episodes=10):
     avg_reward = 0
@@ -23,18 +27,14 @@ def eval_policy(policy, env, eval_episodes=10):
     print("---------------------------------------")
     return avg_reward
 
-def train(train_X, train_y, start_timesteps, eval_freq, max_timesteps):
+def train(train_X, train_y, minibatch_size, start_timesteps, eval_freq, max_timesteps):
     # 相关参数设置
     
     expl_noise = 0.1        # 噪音
     batch_size = 256
-    discount = 0.99         # 折扣因子
-    tau = 0.005
-    policy_noise = 0.2
-    noise_clip = 0.5
-    policy_freq = 2
+    
 
-    env = Env(train_X, train_y, train = True)
+    env = Env(train_X, train_y, minibatch_size = minibatch_size, train = True)
     state_dim = env.observation_dim
     action_dim = env.action_dim
     max_action = 1.0
@@ -43,14 +43,7 @@ def train(train_X, train_y, start_timesteps, eval_freq, max_timesteps):
         "state_dim": state_dim,
         "action_dim": action_dim,
         "max_action": max_action,
-        "discount": discount,
-        "tau": tau,
-        
-        "policy_freq": policy_freq
     }
-
-    kwargs["policy_noise"] = policy_noise * max_action
-    kwargs["noise_clip"] = noise_clip * max_action
 
     policy = TD3(**kwargs)
     replay_buffer = ReplayBuffer(state_dim, action_dim)
@@ -71,7 +64,7 @@ def train(train_X, train_y, start_timesteps, eval_freq, max_timesteps):
             action = (
                 policy.select_action(np.array(state))
                 + np.random.normal(0, max_action * expl_noise, size=action_dim)
-            ).clip(0, 1)
+            )#.clip(0, 1)
             
         # Perform action
         next_state, reward, done = env.step(action)
@@ -107,18 +100,20 @@ def train(train_X, train_y, start_timesteps, eval_freq, max_timesteps):
 if __name__ == '__main__':
     # 数据读取与存储
     data_path = 'dataset.csv'
-    n_in, n_out, validation_split = 120, 6, 0.2
+    n_in, n_out, validation_split = 120, 60, 0.2
     train_X, train_y, test_X, test_y, scaler, pca = \
         process_data(data_path, n_in, n_out, validation_split, 
-                     dropnan = True, use_rnn = False)
+                    dropnan = True, use_rnn = False)
 
     kwargs = {
         'train_X': train_X,
         'train_y': train_y,
-        'start_timesteps': 3000,  
-        'eval_freq': 1000,       
-        'max_timesteps': 10000
+        'start_timesteps': 500,  
+        'eval_freq': 500,
+        'minibatch_size': 10,       
+        'max_timesteps': 40000
     }
+
     # 训练
     train(**kwargs)
 
@@ -128,16 +123,26 @@ if __name__ == '__main__':
 
     # 训练集评估
     train_path = './results/rl/pics/train.png'
-    print('train set:')
-    evaluate(train_X, train_y, scaler, train_path)
+    print('train set:', end = ' ')
+    train_rmse, train_mae = evaluate(train_X, train_y, scaler, train_path)
 
-    print('--------------------------------------')
 
     # 测试集评估
     test_path = './results/rl/pics/test.png'
-    print('test set:')
-    evaluate(test_X, test_y, scaler, test_path)
+    print('test set: ', end = ' ')
+    test_rmse, test_mae = evaluate(test_X, test_y, scaler, test_path)
     
+    # 记录训练结果
+    time_str = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+    steps = 'steps: ' + str(kwargs['max_timesteps'])
+    minibatch_size = 'minibatch_size: ' + str(kwargs['minibatch_size'])
+    start_timesteps = 'start_timesteps： ' + str(kwargs['start_timesteps'])
+    train_metrics = 'train set: RMSE: {:.3f}, MAE: {:.3f}'.format(train_rmse, train_mae)
+    test_metrics = 'test set : RMSE: {:.3f}, MAE: {:.3f}'.format(test_rmse, test_mae)
+
+    lines = [time_str, steps, start_timesteps, minibatch_size, train_metrics, test_metrics]
+    write_log(lines, './results/rl')
+        
 
     
 

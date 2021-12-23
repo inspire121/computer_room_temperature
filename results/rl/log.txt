@@ -1,0 +1,738 @@
+2021-12-22 17:02:08
+steps: 5000
+minibatch_size: 100
+train set: RMSE: 0.399, MAE: 0.265
+test set : RMSE: 0.592, MAE: 0.457
+-------------------------------
+2021-12-22 17:03:08
+steps: 5000
+minibatch_size: 100
+train set: RMSE: 8.893, MAE: 6.218
+test set : RMSE: 4.315, MAE: 2.937
+-------------------------------
+2021-12-22 17:04:01
+steps: 5000
+minibatch_size: 100
+train set: RMSE: 0.486, MAE: 0.348
+test set : RMSE: 0.722, MAE: 0.486
+-------------------------------
+2021-12-22 17:05:27
+steps: 10000
+minibatch_size: 100
+train set: RMSE: 0.376, MAE: 0.270
+test set : RMSE: 0.588, MAE: 0.448
+-------------------------------
+2021-12-22 17:06:19
+steps: 10000
+minibatch_size: 100
+train set: RMSE: 0.448, MAE: 0.342
+test set : RMSE: 0.770, MAE: 0.527
+-------------------------------
+2021-12-22 17:07:48
+steps: 1000
+minibatch_size: 100
+train set: RMSE: 7.697, MAE: 6.258
+test set : RMSE: 5.257, MAE: 4.480
+-------------------------------
+2021-12-22 17:08:04
+steps: 1000
+minibatch_size: 100
+train set: RMSE: 7.398, MAE: 6.084
+test set : RMSE: 7.525, MAE: 6.708
+-------------------------------
+2021-12-22 17:14:41
+steps: 100000
+minibatch_size: 100
+train set: RMSE: 0.206, MAE: 0.120
+test set : RMSE: 0.459, MAE: 0.264
+-------------------------------
+2021-12-22 17:22:36
+steps: 100000
+minibatch_size: 100
+train set: RMSE: 0.218, MAE: 0.127
+test set : RMSE: 0.446, MAE: 0.261
+-------------------------------
+2021-12-22 17:26:05
+steps: 50000
+minibatch_size: 100
+train set: RMSE: 0.246, MAE: 0.147
+test set : RMSE: 0.469, MAE: 0.279
+-------------------------------
+2021-12-22 17:50:01
+steps: 40000
+minibatch_size: 100
+train set: RMSE: 0.337, MAE: 0.233
+test set : RMSE: 0.638, MAE: 0.467
+-------------------------------
+2021-12-22 17:52:39
+steps: 40000
+minibatch_size: 100
+train set: RMSE: 0.247, MAE: 0.155
+test set : RMSE: 0.437, MAE: 0.267
+-------------------------------
+2021-12-22 17:55:24
+steps: 40000
+minibatch_size: 100
+train set: RMSE: 0.285, MAE: 0.187
+test set : RMSE: 0.520, MAE: 0.332
+-------------------------------
+2021-12-22 17:58:55
+steps: 35000
+minibatch_size: 100
+train set: RMSE: 0.264, MAE: 0.158
+test set : RMSE: 0.461, MAE: 0.301
+-------------------------------
+2021-12-22 18:01:13
+steps: 35000
+minibatch_size: 100
+train set: RMSE: 0.328, MAE: 0.248
+test set : RMSE: 0.518, MAE: 0.386
+-------------------------------
+2021-12-22 18:03:32
+steps: 35000
+minibatch_size: 100
+train set: RMSE: 0.282, MAE: 0.171
+test set : RMSE: 0.512, MAE: 0.352
+-------------------------------
+2021-12-22 18:07:05
+steps: 35000
+minibatch_size: 100
+train set: RMSE: 0.321, MAE: 0.197
+test set : RMSE: 0.540, MAE: 0.386
+-------------------------------
+2021-12-22 18:09:54
+steps: 35000
+minibatch_size: 50
+train set: RMSE: 232881159.310, MAE: 206948663.826
+test set : RMSE: 97635124.940, MAE: 87020359.226
+-------------------------------
+2021-12-22 18:12:13
+steps: 35000
+minibatch_size: 50
+train set: RMSE: 0.557, MAE: 0.408
+test set : RMSE: 0.890, MAE: 0.533
+-------------------------------
+2021-12-22 18:14:42
+steps: 35000
+minibatch_size: 50
+train set: RMSE: 0.314, MAE: 0.211
+test set : RMSE: 0.369, MAE: 0.244
+-------------------------------
+2021-12-22 18:21:10
+steps: 50000
+minibatch_size: 50
+train set: RMSE: 0.324, MAE: 0.257
+test set : RMSE: 0.550, MAE: 0.359
+-------------------------------
+2021-12-22 18:24:18
+steps: 50000
+minibatch_size: 50
+train set: RMSE: 0.343, MAE: 0.261
+test set : RMSE: 0.643, MAE: 0.488
+-------------------------------
+2021-12-22 18:27:53
+steps: 50000
+minibatch_size: 50
+train set: RMSE: 218136695.671, MAE: 193002691.436
+test set : RMSE: 90530077.081, MAE: 80187329.081
+-------------------------------
+2021-12-22 18:32:07
+steps: 50000
+minibatch_size: 50
+train set: RMSE: 0.289, MAE: 0.174
+test set : RMSE: 0.517, MAE: 0.315
+-------------------------------
+2021-12-22 18:38:24
+steps: 80000.0
+start_timesteps： 20000.0
+minibatch_size: 50
+train set: RMSE: 0.241, MAE: 0.157
+test set : RMSE: 0.484, MAE: 0.339
+-------------------------------
+2021-12-22 18:42:37
+steps: 80000.0
+start_timesteps： 20000.0
+minibatch_size: 50
+train set: RMSE: 0.287, MAE: 0.174
+test set : RMSE: 0.587, MAE: 0.359
+-------------------------------
+2021-12-22 18:46:52
+steps: 80000.0
+start_timesteps： 20000.0
+minibatch_size: 50
+train set: RMSE: 479530577.115, MAE: 415790692.969
+test set : RMSE: 190476271.722, MAE: 163505281.576
+-------------------------------
+2021-12-22 18:51:07
+steps: 80000.0
+start_timesteps： 20000.0
+minibatch_size: 50
+train set: RMSE: 0.256, MAE: 0.180
+test set : RMSE: 0.517, MAE: 0.330
+-------------------------------
+2021-12-22 18:59:13
+steps: 80000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.252, MAE: 0.160
+test set : RMSE: 0.521, MAE: 0.331
+-------------------------------
+2021-12-22 19:03:32
+steps: 80000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.227, MAE: 0.141
+test set : RMSE: 0.456, MAE: 0.289
+-------------------------------
+2021-12-22 19:08:08
+steps: 80000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.278, MAE: 0.169
+test set : RMSE: 0.514, MAE: 0.349
+-------------------------------
+2021-12-22 19:42:45
+steps: 80000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.227, MAE: 0.147
+test set : RMSE: 0.431, MAE: 0.257
+-------------------------------
+2021-12-22 19:48:27
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.306, MAE: 0.189
+test set : RMSE: 0.505, MAE: 0.359
+-------------------------------
+2021-12-22 20:06:05
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.254, MAE: 0.191
+test set : RMSE: 0.450, MAE: 0.281
+-------------------------------
+2021-12-22 20:16:18
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.283, MAE: 0.195
+test set : RMSE: 0.471, MAE: 0.309
+-------------------------------
+2021-12-22 20:29:25
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 1.091, MAE: 0.213
+test set : RMSE: 0.585, MAE: 0.369
+-------------------------------
+2021-12-22 20:36:04
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 1.389, MAE: 0.425
+test set : RMSE: 1.075, MAE: 0.629
+-------------------------------
+2021-12-22 20:46:39
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 3.730, MAE: 1.072
+test set : RMSE: 8.781, MAE: 5.395
+-------------------------------
+2021-12-22 20:52:26
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 2.796, MAE: 0.732
+test set : RMSE: 1.812, MAE: 0.907
+-------------------------------
+2021-12-22 20:57:53
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 1.160, MAE: 0.310
+test set : RMSE: 1.248, MAE: 0.557
+-------------------------------
+2021-12-22 21:04:27
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.202, MAE: 0.111
+test set : RMSE: 0.478, MAE: 0.293
+-------------------------------
+2021-12-22 21:09:45
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.201, MAE: 0.111
+test set : RMSE: 0.412, MAE: 0.241
+-------------------------------
+2021-12-22 21:15:10
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 1.552, MAE: 0.372
+test set : RMSE: 1.572, MAE: 0.626
+-------------------------------
+2021-12-22 21:20:30
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.246, MAE: 0.125
+test set : RMSE: 0.449, MAE: 0.282
+-------------------------------
+2021-12-22 21:36:55
+steps: 100000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 1.395, MAE: 0.303
+test set : RMSE: 0.637, MAE: 0.334
+-------------------------------
+2021-12-22 21:48:27
+steps: 60000.0
+start_timesteps： 25000.0
+minibatch_size: 50
+train set: RMSE: 0.227, MAE: 0.142
+test set : RMSE: 0.420, MAE: 0.245
+-------------------------------
+2021-12-22 21:56:16
+steps: 75000.0
+start_timesteps： 2500.0
+minibatch_size: 50
+train set: RMSE: 0.231, MAE: 0.141
+test set : RMSE: 0.363, MAE: 0.232
+-------------------------------
+2021-12-22 22:00:21
+steps: 50000.0
+start_timesteps： 2500.0
+minibatch_size: 100
+train set: RMSE: 0.239, MAE: 0.152
+test set : RMSE: 0.388, MAE: 0.250
+-------------------------------
+2021-12-22 22:03:49
+steps: 50000.0
+start_timesteps： 2500.0
+minibatch_size: 100
+train set: RMSE: 0.227, MAE: 0.137
+test set : RMSE: 0.429, MAE: 0.248
+-------------------------------
+2021-12-22 22:07:56
+steps: 50000.0
+start_timesteps： 2500.0
+minibatch_size: 100
+train set: RMSE: 0.262, MAE: 0.170
+test set : RMSE: 0.388, MAE: 0.240
+-------------------------------
+#################################
+从120min - 360min
+#################################
+2021-12-22 22:22:28
+steps: 200000.0
+start_timesteps： 5000.0
+minibatch_size: 100
+train set: RMSE: 0.188, MAE: 0.116
+test set : RMSE: 0.453, MAE: 0.308
+-------------------------------
+#################################
+修改env配置 希望能够学习到时序关系
+#################################
+2021-12-22 22:49:54
+steps: 200000.0
+start_timesteps： 5000.0
+minibatch_size: 100
+train set: RMSE: 0.240, MAE: 0.158
+test set : RMSE: 0.453, MAE: 0.330
+-------------------------------
+2021-12-22 22:57:00
+steps: 100000.0
+start_timesteps： 5000.0
+minibatch_size: 100
+train set: RMSE: 0.296, MAE: 0.209
+test set : RMSE: 0.586, MAE: 0.448
+-------------------------------
+2021-12-22 23:04:28
+steps: 100000.0
+start_timesteps： 5000.0
+minibatch_size: 100
+train set: RMSE: 0.239, MAE: 0.159
+test set : RMSE: 0.528, MAE: 0.387
+-------------------------------
+2021-12-23 00:13:36
+steps: 1000000.0
+start_timesteps： 5000.0
+minibatch_size: 100
+train set: RMSE: 0.217, MAE: 0.134
+test set : RMSE: 0.652, MAE: 0.326
+-------------------------------
+2021-12-23 01:41:30
+steps: 1000000.0
+start_timesteps： 5000.0
+minibatch_size: 2500
+train set: RMSE: 0.150, MAE: 0.111
+test set : RMSE: 0.415, MAE: 0.305
+-------------------------------
+2021-12-23 10:15:20
+steps: 750000.0
+start_timesteps： 5000.0
+minibatch_size: 2500
+train set: RMSE: 0.178, MAE: 0.121
+test set : RMSE: 0.454, MAE: 0.319
+-------------------------------
+2021-12-23 13:23:31
+steps: 500000.0
+start_timesteps： 5000.0
+minibatch_size: 2500
+train set: RMSE: 0.278, MAE: 0.179
+test set : RMSE: 0.717, MAE: 0.461
+-------------------------------
+2021-12-23 15:29:31
+steps: 500000.0
+start_timesteps： 5000.0
+minibatch_size: 2500
+train set: RMSE: 0.324, MAE: 0.220
+test set : RMSE: 0.719, MAE: 0.518
+-------------------------------
+2021-12-23 15:51:29
+steps: 300000.0
+start_timesteps： 5000.0
+minibatch_size: 1000
+train set: RMSE: 0.181, MAE: 0.119
+test set : RMSE: 0.419, MAE: 0.320
+-------------------------------
+2021-12-23 16:06:46
+steps: 100000.0
+start_timesteps： 5000.0
+minibatch_size: 1000
+train set: RMSE: 0.519, MAE: 0.271
+test set : RMSE: 0.627, MAE: 0.494
+-------------------------------
+2021-12-23 16:14:07
+steps: 100000.0
+start_timesteps： 2500.0
+minibatch_size: 500
+train set: RMSE: 0.252, MAE: 0.169
+test set : RMSE: 0.459, MAE: 0.336
+-------------------------------
+2021-12-23 16:34:32
+steps: 100000.0
+start_timesteps： 2500.0
+minibatch_size: 500
+train set: RMSE: 1.429, MAE: 1.063
+test set : RMSE: 1.806, MAE: 1.391
+-------------------------------
+2021-12-23 16:58:03
+steps: 100000.0
+start_timesteps： 5000.0
+minibatch_size: 500
+train set: RMSE: 1.157, MAE: 0.787
+test set : RMSE: 1.447, MAE: 1.108
+-------------------------------
+2021-12-23 17:06:13
+steps: 100000.0
+start_timesteps： 3000.0
+minibatch_size: 500
+train set: RMSE: 2.239, MAE: 1.596
+test set : RMSE: 2.751, MAE: 1.945
+-------------------------------
+2021-12-23 17:13:05
+steps: 100000.0
+start_timesteps： 2000
+minibatch_size: 100
+train set: RMSE: 0.305, MAE: 0.206
+test set : RMSE: 0.371, MAE: 0.264
+-------------------------------
+2021-12-23 17:28:40
+steps: 100000.0
+start_timesteps： 2000
+minibatch_size: 100
+train set: RMSE: 3.375, MAE: 2.521
+test set : RMSE: 3.611, MAE: 2.708
+-------------------------------
+2021-12-23 17:51:12
+steps: 100000.0
+start_timesteps： 2000
+minibatch_size: 100
+train set: RMSE: 0.342, MAE: 0.228
+test set : RMSE: 0.424, MAE: 0.290
+-------------------------------
+2021-12-23 18:00:03
+steps: 100000.0
+start_timesteps： 2000
+minibatch_size: 100
+train set: RMSE: 1.121, MAE: 0.723
+test set : RMSE: 1.548, MAE: 1.109
+-------------------------------
+2021-12-23 18:08:35
+steps: 120000.0
+start_timesteps： 2500
+minibatch_size: 100
+train set: RMSE: 0.436, MAE: 0.257
+test set : RMSE: 0.454, MAE: 0.313
+-------------------------------
+2021-12-23 18:18:00
+steps: 120000.0
+start_timesteps： 2500
+minibatch_size: 100
+train set: RMSE: 0.353, MAE: 0.220
+test set : RMSE: 0.402, MAE: 0.271
+-------------------------------
+2021-12-23 18:19:47
+steps: 2000
+start_timesteps： 250
+minibatch_size: 50
+train set: RMSE: 5.911, MAE: 4.721
+test set : RMSE: 7.164, MAE: 5.535
+-------------------------------
+2021-12-23 18:20:09
+steps: 2000
+start_timesteps： 250
+minibatch_size: 50
+train set: RMSE: 4.469, MAE: 3.512
+test set : RMSE: 4.379, MAE: 3.454
+-------------------------------
+2021-12-23 18:21:10
+steps: 10000
+start_timesteps： 250
+minibatch_size: 50
+train set: RMSE: 1.191, MAE: 0.825
+test set : RMSE: 1.129, MAE: 0.918
+-------------------------------
+2021-12-23 18:22:40
+steps: 15000
+start_timesteps： 250
+minibatch_size: 50
+train set: RMSE: 2.666, MAE: 1.270
+test set : RMSE: 4.494, MAE: 2.678
+-------------------------------
+2021-12-23 18:24:00
+steps: 15000
+start_timesteps： 250
+minibatch_size: 50
+train set: RMSE: 1.559, MAE: 1.085
+test set : RMSE: 2.096, MAE: 1.590
+-------------------------------
+2021-12-23 18:25:27
+steps: 15000
+start_timesteps： 250
+minibatch_size: 50
+train set: RMSE: 1.288, MAE: 0.851
+test set : RMSE: 1.882, MAE: 1.307
+-------------------------------
+2021-12-23 18:26:58
+steps: 15000
+start_timesteps： 250
+minibatch_size: 50
+train set: RMSE: 0.516, MAE: 0.277
+test set : RMSE: 0.550, MAE: 0.366
+-------------------------------
+2021-12-23 18:29:03
+steps: 20000
+start_timesteps： 250
+minibatch_size: 50
+train set: RMSE: 0.403, MAE: 0.249
+test set : RMSE: 0.491, MAE: 0.354
+-------------------------------
+2021-12-23 18:31:03
+steps: 20000
+start_timesteps： 250
+minibatch_size: 10
+train set: RMSE: 0.386, MAE: 0.259
+test set : RMSE: 0.520, MAE: 0.343
+-------------------------------
+2021-12-23 18:32:41
+steps: 20000
+start_timesteps： 250
+minibatch_size: 10
+train set: RMSE: 0.552, MAE: 0.327
+test set : RMSE: 0.833, MAE: 0.498
+-------------------------------
+2021-12-23 18:34:30
+steps: 20000
+start_timesteps： 250
+minibatch_size: 10
+train set: RMSE: 0.416, MAE: 0.254
+test set : RMSE: 0.431, MAE: 0.262
+-------------------------------
+2021-12-23 18:36:38
+steps: 20000
+start_timesteps： 250
+minibatch_size: 10
+train set: RMSE: 0.396, MAE: 0.253
+test set : RMSE: 0.356, MAE: 0.231
+-------------------------------
+2021-12-23 18:40:57
+steps: 20000
+start_timesteps： 250
+minibatch_size: 10
+train set: RMSE: 0.330, MAE: 0.206
+test set : RMSE: 0.435, MAE: 0.295
+-------------------------------
+2021-12-23 18:42:59
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.281, MAE: 0.175
+test set : RMSE: 0.361, MAE: 0.237
+-------------------------------
+2021-12-23 18:45:09
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.284, MAE: 0.174
+test set : RMSE: 0.451, MAE: 0.299
+-------------------------------
+2021-12-23 18:47:00
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.316, MAE: 0.200
+test set : RMSE: 0.336, MAE: 0.202
+-------------------------------
+2021-12-23 18:49:41
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.842, MAE: 0.534
+test set : RMSE: 0.827, MAE: 0.585
+-------------------------------
+2021-12-23 18:51:41
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.332, MAE: 0.205
+test set : RMSE: 0.415, MAE: 0.255
+-------------------------------
+2021-12-23 18:53:46
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.359, MAE: 0.245
+test set : RMSE: 0.558, MAE: 0.367
+-------------------------------
+2021-12-23 18:55:38
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.319, MAE: 0.204
+test set : RMSE: 0.381, MAE: 0.245
+-------------------------------
+2021-12-23 18:59:07
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.301, MAE: 0.173
+test set : RMSE: 0.391, MAE: 0.258
+-------------------------------
+2021-12-23 19:01:28
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.262, MAE: 0.165
+test set : RMSE: 0.413, MAE: 0.246
+-------------------------------
+2021-12-23 19:03:47
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.351, MAE: 0.238
+test set : RMSE: 0.389, MAE: 0.275
+-------------------------------
+2021-12-23 19:05:41
+steps: 25000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.293, MAE: 0.182
+test set : RMSE: 0.341, MAE: 0.210
+-------------------------------
+2021-12-23 19:08:28
+steps: 30000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.281, MAE: 0.191
+test set : RMSE: 0.411, MAE: 0.270
+-------------------------------
+2021-12-23 19:11:15
+steps: 30000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.285, MAE: 0.172
+test set : RMSE: 0.400, MAE: 0.258
+-------------------------------
+2021-12-23 19:13:29
+steps: 30000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.280, MAE: 0.177
+test set : RMSE: 0.332, MAE: 0.211
+-------------------------------
+2021-12-23 19:16:21
+steps: 30000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.269, MAE: 0.178
+test set : RMSE: 0.449, MAE: 0.292
+-------------------------------
+2021-12-23 19:19:25
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.309, MAE: 0.186
+test set : RMSE: 0.431, MAE: 0.279
+-------------------------------
+2021-12-23 19:22:15
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.253, MAE: 0.156
+test set : RMSE: 0.418, MAE: 0.248
+-------------------------------
+2021-12-23 19:25:08
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.264, MAE: 0.164
+test set : RMSE: 0.406, MAE: 0.274
+-------------------------------
+2021-12-23 19:28:04
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.365, MAE: 0.214
+test set : RMSE: 0.346, MAE: 0.194
+-------------------------------
+2021-12-23 19:31:23
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.277, MAE: 0.189
+test set : RMSE: 0.410, MAE: 0.267
+-------------------------------
+2021-12-23 19:34:17
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.290, MAE: 0.170
+test set : RMSE: 0.347, MAE: 0.216
+-------------------------------
+2021-12-23 19:37:42
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.267, MAE: 0.179
+test set : RMSE: 0.371, MAE: 0.242
+-------------------------------
+2021-12-23 19:41:19
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.251, MAE: 0.155
+test set : RMSE: 0.431, MAE: 0.279
+-------------------------------
+2021-12-23 19:44:08
+steps: 40000
+start_timesteps： 500
+minibatch_size: 10
+train set: RMSE: 0.245, MAE: 0.147
+test set : RMSE: 0.416, MAE: 0.255
+-------------------------------

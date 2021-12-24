@@ -40,9 +40,8 @@ class Env:
     def step(self, action):
         action_num = float(action)
         reward = 0
-        MSE = (action_num - self.check[self.i])**2
         MAE = abs(action_num - self.check[self.i])
-        reward = -MAE - MSE
+        reward = -5 * (MAE**2 + MAE)
         
         self.i += 1
         if self.i == self.observation_space.shape[0]:

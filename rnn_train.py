@@ -38,9 +38,9 @@ def test_epoch(model, test_iter, scaler, loss, device):
         for X, y in test_iter:
             X, y = X.to(device), y.to(device)
             y_hat = model(X)
-            l = loss(y_hat, y).mean()
+            l = loss(y_hat, y)
             RMSE, MAE = calc_metrics(y_hat.cpu().detach().numpy(), y.cpu().detach().numpy(), scaler)
-            metric.add(RMSE * y.numel(), MAE * y.numel(), float(l.item()), y.numel())
+            metric.add(RMSE * y.numel(), MAE * y.numel(), float(l.sum()), y.numel())
 
     return metric[0] / metric[-1], metric[1] / metric[-1], metric[2] / metric[-1]
 
@@ -76,14 +76,14 @@ def train(model, epochs, scaler):
 
     torch.save(model.state_dict(), './results/rnn/models/RNN_epochs_' + str(epochs) + '.pth')
 
-epochs = 200
+epochs = 50
 
 if __name__ == '__main__':
     data_path = 'dataset.csv'
-    n_in, n_out, validation_split = 60, 60, 0.2
+    n_in, n_out, validation_split = 360, 60, 0.2
     train_X, train_y, test_X, test_y, scaler, _ = \
         process_data(data_path, n_in, n_out, validation_split, 
-                     mode = 'standard', dropnan = True, use_rnn = True)
+                     mode = 'minmax', dropnan = True, use_rnn = True)
 
     # 生成数据集
     batch_size = 32
@@ -91,13 +91,15 @@ if __name__ == '__main__':
     test_iter = load_iter(test_X, test_y, batch_size)
 
     # 生成模型
+    
     kwargs = {
         'num_inputs': 6,
-        'num_hiddens': 256,
-        'num_layers': 2
+        'num_hiddens': 128,
+        'num_layers': 3
     }
+    # model = RnnNet(**kwargs)
 
-    model = RnnNet(**kwargs)
+    model = load_model('./results/rnn/models/RNN_epochs_300.pth', kwargs)
 
     # 训练
     train(model, epochs, scaler)
@@ -106,8 +108,8 @@ if __name__ == '__main__':
     
     print('train set:', end = ' ')
     train_pic_path = './results/rnn/pics/train.png'
-    evaluate(train_X, train_y, scaler, model_path, train_pic_path)
+    evaluate(train_X, train_y, kwargs, scaler, model_path, train_pic_path)
     test_pic_path = './results/rnn/pics/test.png'
     print('test set:', end = ' ')
-    evaluate(test_X, test_y, scaler, model_path, test_pic_path)
+    evaluate(test_X, test_y, kwargs, scaler, model_path, test_pic_path)
 

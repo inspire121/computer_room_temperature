@@ -11,9 +11,9 @@ class RnnNet(nn.Module):
         )
 
         self.LinearSeq = nn.Sequential(
-            nn.Linear(num_hiddens, 512),
+            nn.Linear(num_hiddens, 256),
             nn.ReLU(),
-            nn.Linear(512, 256),
+            nn.Linear(256, 256),
             nn.ReLU(),
             nn.Linear(256, 1)
         )
